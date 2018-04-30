@@ -22,41 +22,42 @@ deb mirror://mirrors.ubuntu.com/mirrors.txt xenial-security main restricted univ
     cat /etc/apt/sources.list.bkp >> /etc/apt/sources.list && \
     cat /etc/apt/sources.list
 
-RUN apt-get clean all && \
-    apt-get update && \
+RUN apt-get clean all &&  \
+    apt-get update &&     \
     apt-get upgrade -y && \
-    apt-get install -y  \
-        autotools-dev   \
-        automake        \
-        cmake           \
-        curl            \
-        grep            \
-        sed             \
-        dpkg            \
-        fuse            \
-        git             \
-        wget            \
-        zip             \
-        openjdk-8-jre   \
-        build-essential \
-        pkg-config      \
-        python          \
-        python-dev      \
-        python-pip      \
-        bzip2           \
-        ca-certificates \
-        libglib2.0-0    \
-        libxext6        \
-        libsm6          \
-        libxrender1     \
-        git             \
-        mercurial       \
-        subversion      \
-        r-base          \
-        r-base-dev      \
-        zlib1g-dev &&   \
-        apt-get clean && \
-        apt-get purge && \
+    apt-get install -y    \
+        autotools-dev     \
+        automake          \
+        cmake             \
+        curl              \
+        grep              \
+        sed               \
+        dpkg              \
+        fuse              \
+        git               \
+        wget              \
+        zip               \
+        openjdk-8-jre     \
+        build-essential   \
+        pkg-config        \
+        python            \
+        python-dev        \
+        python-pip        \
+        bzip2             \
+        ca-certificates   \
+        libglib2.0-0      \
+        libxext6          \
+        libsm6            \
+        libxrender1       \
+        git               \
+        mercurial         \
+        subversion        \
+        r-base            \
+        r-base-dev        \
+        libnss-sss        \
+        zlib1g-dev &&     \
+        apt-get clean &&  \
+        apt-get purge &&  \
         rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
