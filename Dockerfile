@@ -55,10 +55,12 @@ RUN apt-get clean all &&  \
         r-base            \
         r-base-dev        \
         libnss-sss        \
+        locales           \
         zlib1g-dev &&     \
-        apt-get clean &&  \
-        apt-get purge &&  \
-        rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+    locale-gen en_US.UTF-8 && \
+    apt-get clean &&  \
+    apt-get purge &&  \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
