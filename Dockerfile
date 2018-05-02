@@ -106,7 +106,7 @@ RUN conda install bioconductor-deseq2 bioconductor-tximport
 
 WORKDIR $HOME
 
-RUN git clone https://github.com/hyunhwaj/SalmonTE
+RUN git clone https://github.com/wwliao/SalmonTE.git
 ENV PATH=$PATH:$HOME/SalmonTE
 
 WORKDIR /data
